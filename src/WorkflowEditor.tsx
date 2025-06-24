@@ -86,9 +86,9 @@ function TopBar({ onSave }: { onSave: () => void }) {
 function SideBar() {
   const items = ['Overview', 'Templates', 'Variables', 'Help', 'Updates']
   return (
-    <div className="fixed top-0 left-0 bottom-0 w-20 bg-white/20 backdrop-blur flex flex-col items-center py-6 space-y-6 text-white z-20">
+    <div className="fixed top-0 left-0 bottom-0 w-32 bg-white/20 backdrop-blur flex flex-col items-center py-6 space-y-4 text-white z-20">
       {items.map(it => (
-        <div key={it} className="text-sm">{it}</div>
+        <div key={it} className="text-xs text-center px-2 hover:bg-white/10 rounded cursor-pointer transition-colors">{it}</div>
       ))}
     </div>
   )
@@ -152,7 +152,7 @@ export default function WorkflowEditor() {
       <SideBar />
       <TopBar onSave={() => localStorage.setItem('workflow', JSON.stringify({ nodes, edges }))} />
       <BottomBar />
-      <div className="absolute inset-0 ml-20 mt-12 mb-16">
+      <div className="absolute inset-0 ml-32 mt-12 mb-16">
         <ReactFlow
           nodes={nodes}
           edges={edges}
